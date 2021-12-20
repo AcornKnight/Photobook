@@ -9,15 +9,16 @@
 	</head>
 
 	<?php
-		include('json_util.php');
+		include('data.php');
 	?>
 
 	<body style="text-align:center;">
-		<?php
-			$classarr = readjson();
-		?>
-			<h1><?= $classarr[$_GET['index']]?> </h1>
-			
+	
+		<h1><?= $student[$_GET['index']]['name'] ?></h1>
+		<p><?= $student[$_GET['index']]['gender'] ?></p>
+		<p><?= $student[$_GET['index']]['age'] ?></p>
+		<p><?= $student[$_GET['index']]['year'] ?></p>
+		<p><?= $student[$_GET['index']]['pictures'][0] ?></p>
 			<form method="post"	action="modify.php">
 				<p>
 				<input type="hidden" name="index" value=<?=$_GET['index']?>>
@@ -28,7 +29,7 @@
 			<form method="post"	action="delete.php">
 				<p>
 				<input type="hidden" name="index" value=<?=$_GET['index']?>>
-				<input type="submit" name="submit" value="Delete Quote">
+				<input type="submit" name="submit" value="Delete Student">
 				</p>
 			</form>
 			

@@ -15,11 +15,29 @@
 	require 'functions.php';
 	require 'json_util.php';
 	
-	function showCard ($person){
-			echo "<h1>".$person['name']."</h1>";
-			echo "<p>".$person['age']." </p>";
-			echo "<p>".$person['gender']." </p>";
-			echo "<p>".$person['year']." </p>";
+	function showCard ($index){
+			
+			echo '<div class="row">';
+			//<!-- Single Advisor-->
+			echo '<div class="col-12 col-sm-6 col-lg-3">';
+				echo '<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;width: 250px;">';
+				# '<!-- Team Thumb-->';
+				echo '<div class="advisor_thumb"><a href="detail.html"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>';
+					# <!-- Social Info-->
+					echo '<div class="social-info"><a href="detail.html"><i class="fa fa-facebook"></i></a><a href="detail.html"><i class="fa fa-twitter"></i></a><a href="detail.html"><i class="fa fa-linkedin"></i></a></div>';
+				echo '</div>';
+					#<!-- Team Details-->
+					echo '<div class="single_advisor_details_info">';
+							
+							echo "<h1>".$student[$index]['name']."</h1>";
+							echo "<p>".$student[$index]['age']." </p>";
+							echo "<p>".$student[$index]['gender']." </p>";
+							echo "<p>".$student[$index]['year']." </p>";
+							echo '<a href="detail.php?index=<?= $index ?>">See Student Info Test </a>';
+							
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
 			
 	}
 ?>
@@ -58,25 +76,24 @@ $student=[
 
 	$jsonfile = read_json(); 
 ?>
-
+	<body>
 <?php
 #Displays our students array by using a for loop
-for($i=0;$i<count($student);$i++){
+#for($i=0;$i<count($student);$i++){
 	?>
-	<h1><?=$student[$i]['name'] ?></h1>
-	<p><?=$student[$i]['age']?></p>
-	<p><?=$student[$i]['gender']?></p>
-	<p><?=$student[$i]['year']?></p>
-	
-	<!--/*/<a href="noah_gestiehr.php?index=<?= $i ?>">See student</a>*/-->
+<!--	<h1><?=#$student[$i]['name'] ?></h1>
+	<p><?=#$student[$i]['age']?></p>
+	<p><?=#$student[$i]['gender']?></p>
+	<p><?=#$student[$i]['year']?></p>
+	-->
 	<!-- Links -->
-	<a href="noah_gestiehr.php?index=<?= $i ?>">See Student Info Test </a>
+	
 	<?php
 } ?>
 
 
 
-	<body>
+	
 		<!-- This will be our 4 graphical cards for the group -->
 		<div class="container text-center">
 			<?= '<h1>This is ASE 230 - class of Fall 2021</h1>'?>
@@ -92,78 +109,7 @@ for($i=0;$i<count($student);$i++){
 				</div>
 			</div>
 		</div>
-		<div class="row">
-		<!-- Single Advisor-->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;width: 250px;">
-				<!-- Team Thumb-->
-				<div class="advisor_thumb"><a href="detail.html"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
-					<!-- Social Info-->
-					<div class="social-info"><a href="detail.html"><i class="fa fa-facebook"></i></a><a href="detail.html"><i class="fa fa-twitter"></i></a><a href="detail.html"><i class="fa fa-linkedin"></i></a></div>
-				</div>
-					<!-- Team Details-->
-					<div class="single_advisor_details_info">
-						<?php
-							echo "Noah R. Gestiehr";
-							echo '<p class="designation">Founder & CEO</p';
-						?>
-					</div>
-				</div>
-			</div>
-		
-		<!-- Single Advisor-->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp; width: 250px;">
-				<!-- Team Thumb-->
-				<div class="advisor_thumb"><a href="detail.html"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""></a>
-					<!-- Social Info-->
-					<div class="social-info"><a href="detail.html"><i class="fa fa-facebook"></i></a><a href="detail.html"><i class="fa fa-twitter"></i></a><a href="detail.html"><i class="fa fa-linkedin"></i></a></div>
-				</div>
-					<!-- Team Details-->
-					<div class="single_advisor_details_info">
-					<?php
-						echo "<h6>Sean</h6>";
-						echo '<p class="designation">UI Designer</p>';
-					?>
-					</div>
-				</div>
-			</div>
-		<!-- Single Advisor-->
-			<div class="col-12 col-sm-6 col-lg-3">
-			<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;width: 250px;">
-				<!-- Team Thumb-->
-			<div class="advisor_thumb"><a href="detail.html"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
-				<!-- Social Info-->
-				<div class="social-info"><a href="detail.html"><i class="fa fa-facebook"></i></a><a href="detail.html"><i class="fa fa-twitter"></i></a><a href="detail.html"><i class="fa fa-linkedin"></i></a></div>
-			</div>
-				<!-- Team Details-->
-					<div class="single_advisor_details_info">
-					<?php
-						echo "<h6>Jason</h6>";
-						echo '<p class="designation">Developer</p>';
-					?>
-					</div>
-				</div>
-			</div>
-		<!-- Single Advisor-->
-			<div class="col-12 col-sm-6 col-lg-3">
-			<div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;width: 250px;">
-				<!-- Team Thumb-->
-				<div class="advisor_thumb"><a href="detail.html"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""></a>
-					<!-- Social Info-->
-					<div class="social-info"><a href="detail.html"><i class="fa fa-facebook"></i></a><a href="detail.html"><i class="fa fa-twitter"></i></a><a href="detail.html"><i class="fa fa-linkedin"></i></a></div>
-				</div>
-					<!-- Team Details-->
-					<div class="single_advisor_details_info">
-					<?php
-					echo "<h6>Niloy Islam</h6>";
-					echo '<p class="designation">Marketing Manager</p>';
-					?>
-					</div>
-				</div>
-			</div>
-			</div>
-	</div>
+		</div>
 		<!-- Button to take us to create a new element in our student array -->
 		<form method="post"	action="create.php">
 				<p>

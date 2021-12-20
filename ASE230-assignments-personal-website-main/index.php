@@ -33,7 +33,7 @@
 							echo "<p>".$student[$index]['age']." </p>";
 							echo "<p>".$student[$index]['gender']." </p>";
 							echo "<p>".$student[$index]['year']." </p>";
-							echo '<a href="noah_gestiehr.php?index=<?= $index ?>">See Student Info Test </a>';
+							echo '<a href="detail.php?index=<?= $index ?>">See Student Info Test </a>';
 							
 					echo '</div>';
 				echo '</div>';
